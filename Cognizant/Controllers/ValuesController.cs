@@ -26,11 +26,20 @@ namespace Cognizant.Controllers
             return ProfileDatabase.Profiles.Remove(victim); // ieskome butent tokio id, kurio reikia (jis vienintelis ->Single) // trinimas <- delete
         }
 
-        [HttpPut("{id}/{name}/{age}")]
+        /*[HttpPut("{id}/{name}/{age}")]
         public bool Add(int id, string name, int age)
         {
             // victim = ProfileDatabase.Profiles.Single(x => x.Id == id);
             return ProfileDatabase.Add(id, name, age);
+        }*/
+
+        //ADD metodas POST'ui
+
+        [HttpPost]
+        public bool Post([FromBody] Profile profile) // frombody reikalingas tam, kad nebutu vien 0 ir NULL
+        {
+            ProfileDatabase.Profiles.Add(profile);
+            return true;
         }
 
         /* public Profile Get(int id)
