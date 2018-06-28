@@ -27,10 +27,10 @@ namespace Cognizant.Controllers
         }
 
         [HttpPut("{id}/{name}/{age}")]
-        public Profile Add(int id, string name, int age)
+        public bool Add(int id, string name, int age)
         {
             // victim = ProfileDatabase.Profiles.Single(x => x.Id == id);
-            return ProfileDatabase.Profiles.Add(id, name, age);
+            return ProfileDatabase.Add(id, name, age);
         }
 
         /* public Profile Get(int id)

@@ -16,7 +16,7 @@ namespace Cognizant.Models
         );
 
         public static bool Add(int id, string name, int age) {
-            Profiles.Add(new Profile() { Id = id, Name = name, Age = age });
+            Profiles.Add(new Profile { Id = id, Name = name, Age = age });
             return true;
         }
     }
